@@ -1,1 +1,1 @@
-"# SmartCampusNMAMIT" 
+# SmartCampusNMAMIT
