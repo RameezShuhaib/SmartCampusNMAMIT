@@ -3,13 +3,12 @@ import { NavController } from 'ionic-angular';
 import { MarksPage } from '../marks/marks';
 import { AttendancePage } from '../attendance/attendance';
 import { ProfilePage } from '../profile/profile';
-import { MarksPage } from '../marks/marks';
-import { AttendancePage } from '../attendance/attendance';
 
 @Component({
   selector: 'page-tabs-controller',
   templateUrl: 'tabs-controller.html'
 })
+
 export class TabsControllerPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
