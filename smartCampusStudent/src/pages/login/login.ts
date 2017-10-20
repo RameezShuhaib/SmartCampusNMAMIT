@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { LoginProvider } from '../../providers/login/login';
 
 @Component({
   selector: 'page-login',
@@ -14,7 +13,7 @@ export class LoginPage {
   usn:String;
   pass:String;
 
-  constructor(public navCtrl: NavController, public http:Http) {
+  constructor(public navCtrl: NavController,private loginProvider:LoginProvider) {
   }
   // goToProfile(params){
   //   if (!params) params = {};
@@ -22,9 +21,8 @@ export class LoginPage {
   // }
   getLogin() {
     let parmas = {usn : this.usn.toUpperCase(),pass : this.pass}
-    this.http.post('http://localhost:3000/login', parmas)
-    .map(res => res.json())
-    .subscribe(data => {
+    this.loginProvider.getDetails(parmas)
+    .subscribe((data) => {
         console.log(data);
         if(data.Success) {
           this.usn = '';
