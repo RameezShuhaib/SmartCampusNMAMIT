@@ -12,5 +12,21 @@
     "body-parser": "^1.18.0",
     "express": "^4.15.4",
     "mysql": "^2.14.1"
-  }
+  },
+  "devDependencies": {
+    "cookie-parser": "^1.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RameezShuhaib/SmartCampusNMAMIT.git"
+  },
+  "keywords": [
+    "Smart",
+    "Campus",
+    "NMAMIT"
+  ],
+  "bugs": {
+    "url": "https://github.com/RameezShuhaib/SmartCampusNMAMIT/issues"
+  },
+  "homepage": "https://github.com/RameezShuhaib/SmartCampusNMAMIT#readme"
 }

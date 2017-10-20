@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cookieParser = require('cookie-parser')
 const db = require('./db')
 
 let port = 3000;
 let app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use("/public", express.static(path.join(__dirname, 'public')));
 
 const con = db.Connection
@@ -16,21 +18,15 @@ app.get('/', function(req,res) {
 });
 
 app.post('/login', function(req,res){
-    login = db.query.login(req.body.usn, req.body.pass)
-    if (login){
-        login['Success'] = true
-        res.json(login)
-    }else{
-        res.json({Success:false})
-    }
+    db.query.login(req.body.usn, req.body.pass, res)
 });
 
 app.get('/getProfile', function(req,res){
-    res.json(db.query.getProfile(req.body.usn))
+    db.query.getProfile(req.query.usn, res)
 });
 
 app.get('/getMarks', function(req,res){
-    res.json(db.query.getProfile(req.body.exam))
+    res.json(db.query.getMarks(req.body.exam))
 });
 
 app.get('/getAttendence', function(req,res){
