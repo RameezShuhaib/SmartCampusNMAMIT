@@ -8,7 +8,6 @@ import { ProfilePage } from '../profile/profile';
   selector: 'page-tabs-controller',
   templateUrl: 'tabs-controller.html'
 })
-
 export class TabsControllerPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
@@ -20,7 +19,9 @@ export class TabsControllerPage {
   goToMarks(params){
     if (!params) params = {};
     this.navCtrl.push(MarksPage);
-  }goToAttendance(params){
+  }
+  
+  goToAttendance(params){
     if (!params) params = {};
     this.navCtrl.push(AttendancePage);
   }
