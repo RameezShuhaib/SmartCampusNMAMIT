@@ -12,7 +12,7 @@ export class UserProfilePipe implements PipeTransform {
   /**
    * Takes a value and makes it lowercase.
    */
-  transform(value: string, ...args) {
+  transform(value: string,) {
     return value.toLowerCase();
   }
 }

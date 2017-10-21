@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ProfilePage } from '../profile/profile';
+import { TabsControllerPage } from '../tabs-controller/tabs-controller';
 import { LoginProvider } from '../../providers/login/login';
 
 @Component({
@@ -26,7 +26,8 @@ export class LoginPage {
     this.loginProvider.getDetails(parmas)
     .subscribe((data) => {
         if(data.Success) {
-          this.navCtrl.push(ProfilePage);
+          this.loginProvider.setDetails(data);
+          this.navCtrl.push(TabsControllerPage);
         } else {
           alert("Invalid USN or Password");
         }

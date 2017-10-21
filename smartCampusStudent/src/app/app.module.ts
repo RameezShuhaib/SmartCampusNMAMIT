@@ -14,7 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginProvider } from '../providers/login/login';
-import { UserProfilePipe } from '../pipes/user-profile/user-profile';
+// import { UserProfilePipe } from '../pipes/user-profile/user-profile';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,9 @@ import { UserProfilePipe } from '../pipes/user-profile/user-profile';
     AttendancePage,
     MarksPage,
     TabsControllerPage,
-    LoginPage,
-    UserProfilePipe
+    LoginPage
+    // ,
+    // UserProfilePipe
   ],
   imports: [
     BrowserModule,
@@ -38,8 +39,9 @@ import { UserProfilePipe } from '../pipes/user-profile/user-profile';
     AttendancePage,
     MarksPage,
     TabsControllerPage,
-    LoginPage,
-    UserProfilePipe
+    LoginPage
+    // ,
+    // UserProfilePipe
   ],
   providers: [
     StatusBar,
