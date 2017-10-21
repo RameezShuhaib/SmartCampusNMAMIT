@@ -23,17 +23,22 @@ module.exports = {
             con.query(q, function(err, result, fields){
                 if (err) throw err;
                 res.json(result)
-            })
+            });
         },
         getMarks: function(exam, req, res){
             q = "SELECT * FROM marks m, studentdetails s,examcreation e,subjectlist l WHERE m.sid = s.sid and e.eid=m.examname and e.examtype!='3' and m.subjects=l.uid AND m.branch ='" + req.session.course + "'  and m.semester='" + req.session.semester + "' AND m.division = '" + req.session.division + "' AND s.rollno = '" + req.session.University_Seat + "' and m.examname='" + exam + "' order by m.examname"
             con.query(q, function(err, result, fields){
                 if (err) throw err;
                 res.json(result)
-            })
+            });
         },
-        getAttendence: function(sem){
-            
+        
+        getAttendence: function(course, sem, div, usn, res){
+            q = "SELECT l.subjectname as Subjects,sum(`attendance`) as `Total-Presents`,count(`subject`) as `Total-Periods`,(SELECT TRUNCATE( (sum(`attendance`)/count(`subject`))*100, 2 )) as `%` FROM `attendance` a join subjectlist l on a.subject=l.uid and `branch`='" + course + "'  and `semester`='" + sem + "' and `division`='" + div + "' AND rollno='" + usn + "' group by `sid`,subject order by `date`"
+            con.query(q, function(err, result, fields){
+                if (err) throw err;
+                res.json(result)
+            });
         }
     }
 }

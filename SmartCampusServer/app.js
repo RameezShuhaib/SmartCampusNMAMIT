@@ -10,7 +10,10 @@ let app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(session({secret: 'bhj8789ygfu7##6juk'}))
+app.use(session(
+    {
+        secret: 'bhj8789ygfu7##6juk'
+    }));
 app.use("/public", express.static(path.join(__dirname, 'public')));
 
 const con = db.Connection
@@ -28,11 +31,11 @@ app.get('/getProfile', function(req,res){
 });
 
 app.get('/getMarks', function(req,res){
-    db.query.getMarks(req.body.exam, req, res)
+    db.query.getMarks(req.query.exam, req, res)
 });
 
 app.get('/getAttendence', function(req,res){
-    res.json(db.query.getAttendence(req.body.sem))
+    db.query.getAttendence(req.query.course, req.query.sem, req.query.div, req.query.usn, res)
 });
 
 
