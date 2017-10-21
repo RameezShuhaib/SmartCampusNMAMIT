@@ -24,7 +24,7 @@ app.post('/login', function(req,res){
 });
 
 app.get('/getProfile', function(req,res){
-    db.query.getProfile(req.query.usn, res)
+    db.query.getProfile(req.session.usn, res)
 });
 
 app.get('/getMarks', function(req,res){
