@@ -14,8 +14,8 @@ export class LoginPage {
   pass:String;
 
   constructor(public navCtrl: NavController,private loginProvider:LoginProvider) {
-    this.usn = '4NM12ME003';
-    this.pass = '07/09/1993';
+    this.usn = '4NM12CS165';
+    this.pass = '31/05/1993';
   }
   // goToProfile(params){
   //   if (!params) params = {};
