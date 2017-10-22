@@ -15,6 +15,17 @@ export class LoginProvider {
     .map(res => res.json());
   }
 
+  getAttendance(sem:number) {
+    // let params = {
+    //   "course" : this.details.course,
+    //   "sem" : sem,
+    //   "div" : this.details.division,
+    //   "usn" : this.details.University_Seat
+    // }
+    return this.http.get(`http://localhost:3000/getAttendence?course=${this.details.course}&sem=${sem}&div=${this.details.division}&usn=${this.details.University_Seat}`)
+    .map(res => res.json())
+  }
+
   setDetails(data:any) {
     this.details = data;
   }

@@ -11,30 +11,32 @@
       <ion-label>
         Semister
       </ion-label>
-      <ion-select name="">
-        <ion-option>
-          1st Sem
+      <ion-select name="attandanceChoice"
+      (ionChange)=  "getSemester()"
+      [(ngModel)]="attandanceChoice">
+        <ion-option value="1">
+          1 Sem
         </ion-option>
-        <ion-option>
-          2nd Sem
+        <ion-option value="2">
+          2 Sem
         </ion-option>
-        <ion-option>
-          3rd Sem
+        <ion-option value="3">
+          3 Sem
         </ion-option>
-        <ion-option>
-          4th Sem
+        <ion-option value="4">
+          4 Sem
         </ion-option>
-        <ion-option>
-          5th Sem
+        <ion-option value="5">
+          5 Sem
         </ion-option>
-        <ion-option>
-          6th Sem
+        <ion-option value="6">
+          6 Sem
         </ion-option>
-        <ion-option>
-          7th Sem
+        <ion-option value="7">
+          7 Sem
         </ion-option>
-        <ion-option>
-          8th Sem
+        <ion-option value="8">
+          8 Sem
         </ion-option>
       </ion-select>
     </ion-item>
