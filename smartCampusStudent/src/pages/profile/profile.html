@@ -1,14 +1,30 @@
 <ion-header>
+      <link href="https://fonts.googleapis.com/css?family=Bitter|Noto+Sans" rel="stylesheet">
+
   <ion-navbar>
-    <ion-title>
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="color:#eeeeee;">
       Profile
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content id="page2">
-  <div>
-    <img src="assets/img/hBwVVmLuQtSkiJCRwBUN_AAEAAQAAAAAAAAcvAAAAJDNjZjI1MTg3LTBlODYtNDI5ZS1iN2ZiLWZiZjEzYjgxY2EzMg.jpg" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+<ion-content id="content">
+  <div id="profile-background" padding >
+      
+    <div id="profilepic" >
+	          <img src="assets/img/hBwVVmLuQtSkiJCRwBUN_AAEAAQAAAAAAAAcvAAAAJDNjZjI1MTg3LTBlODYtNDI5ZS1iN2ZiLWZiZjEzYjgxY2EzMg.jpg" >
+
+    </div>
+  <h1 class="pro-heading">
+      MAHAMMAD ZIYA
+    </h1>
+    <h3 class="pro-heading" >
+      4NM15IS029
+    </h3>
   </div>
+<br>
   <ion-list id="profile-list2">
     <ion-item *ngFor="let p of profile" id="profile-list-item-container9">
       <div id="profile-markdown13" class="show-list-numbers-and-dots">
